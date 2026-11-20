@@ -1,0 +1,1560 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTV小蓝官网入口 - 影像社区,记录真实的品牌力量</title>
+<meta name="description" content="GTV小蓝官方网站，专注真实影像与生活记录的原创视频社区，汇聚品质创作者与多元内容生态，陪伴每一位用户记录温暖而有力量的日常。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23133a6b'/%3E%3Cpath d='M26 20l18 12-18 12z' fill='%235ec8f0'/%3E%3Ccircle cx='18' cy='18' r='5' fill='%238fd8f2'/%3E%3C/svg%3E">
+<style>
+:root{
+  --gtv-navy:#0f2e55;
+  --gtv-navy-deep:#081c36;
+  --gtv-blue:#1f6fd0;
+  --gtv-sky:#5ec8f0;
+  --gtv-mist:#eef4fb;
+  --gtv-white:#ffffff;
+  --gtv-ink:#15314f;
+  --gtv-gray:#5d7288;
+  --gtv-line:#d8e4f0;
+  --gtv-gold:#f2a93b;
+  --gtv-radius:18px;
+  --gtv-shadow:0 12px 34px rgba(15,46,85,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:132px;}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  color:var(--gtv-ink);
+  background:linear-gradient(180deg,#f4f9fe 0%,#ffffff 22%,#f7fbfe 100%);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+.gtv-sticky-wrap{position:sticky;top:0;z-index:120;}
+
+/* 公告条 */
+.gtv-announce{
+  background:linear-gradient(90deg,var(--gtv-navy-deep),var(--gtv-navy) 45%,var(--gtv-blue));
+  color:#dcebfa;
+  font-size:13px;
+  padding:8px 16px;
+}
+.gtv-announce-inner{
+  max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.gtv-announce-badge{
+  background:var(--gtv-sky);color:var(--gtv-navy-deep);font-weight:700;
+  border-radius:999px;padding:1px 10px;font-size:12px;letter-spacing:.5px;
+}
+.gtv-announce-track{display:flex;gap:22px;flex-wrap:wrap;font-size:13px;}
+.gtv-announce-track span::before{content:"·";margin-right:8px;color:var(--gtv-sky);}
+.gtv-announce a{color:#fff;border-bottom:1px dashed rgba(255,255,255,.5);}
+
+/* 页头 */
+.gtv-header{
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--gtv-line);
+}
+.gtv-header-inner{
+  max-width:1200px;margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;gap:22px;
+}
+.gtv-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.gtv-logo-mark{
+  width:40px;height:40px;border-radius:12px;
+  background:linear-gradient(140deg,var(--gtv-navy),var(--gtv-blue) 60%,var(--gtv-sky));
+  display:grid;place-items:center;color:#fff;font-weight:800;font-size:16px;letter-spacing:.5px;
+  box-shadow:0 6px 16px rgba(31,111,208,.35);
+}
+.gtv-logo-text{display:flex;flex-direction:column;line-height:1.2;}
+.gtv-logo-text b{font-size:17px;color:var(--gtv-navy);letter-spacing:.5px;}
+.gtv-logo-text em{font-style:normal;font-size:11px;color:var(--gtv-gray);letter-spacing:2px;}
+.gtv-nav{display:flex;gap:4px;flex:1;flex-wrap:wrap;}
+.gtv-nav a{
+  padding:8px 13px;border-radius:10px;font-size:14.5px;color:#2b4a6b;font-weight:500;
+  transition:.25s;white-space:nowrap;
+}
+.gtv-nav a:hover,.gtv-nav a.gtv-active{background:var(--gtv-mist);color:var(--gtv-blue);}
+.gtv-header-tools{display:flex;align-items:center;gap:10px;}
+.gtv-search{position:relative;display:flex;align-items:center;}
+.gtv-search input{
+  width:190px;padding:9px 38px 9px 14px;border-radius:999px;border:1px solid var(--gtv-line);
+  background:#f7fbff;font-size:13.5px;color:var(--gtv-ink);outline:none;transition:.3s;
+}
+.gtv-search input:focus{border-color:var(--gtv-blue);background:#fff;width:220px;box-shadow:0 0 0 3px rgba(31,111,208,.12);}
+.gtv-search button{
+  position:absolute;right:5px;width:30px;height:30px;border-radius:50%;
+  background:var(--gtv-blue);color:#fff;display:grid;place-items:center;font-size:14px;transition:.25s;
+}
+.gtv-search button:hover{background:var(--gtv-navy);}
+.gtv-search-tip{
+  position:absolute;top:46px;right:0;background:#fff;border:1px solid var(--gtv-line);
+  border-radius:12px;box-shadow:var(--gtv-shadow);padding:10px 14px;font-size:13px;color:var(--gtv-gray);
+  width:260px;display:none;z-index:200;
+}
+.gtv-search-tip.gtv-show{display:block;}
+.gtv-search-tip b{color:var(--gtv-blue);}
+.gtv-menu-btn{
+  display:none;width:42px;height:42px;border-radius:12px;background:var(--gtv-mist);
+  color:var(--gtv-navy);font-size:20px;
+}
+
+/* 按钮 */
+.gtv-btn{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;
+  font-size:15px;font-weight:600;transition:.28s;border:1px solid transparent;
+}
+.gtv-btn-primary{background:linear-gradient(120deg,var(--gtv-blue),var(--gtv-navy));color:#fff;box-shadow:0 10px 24px rgba(31,111,208,.3);}
+.gtv-btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(31,111,208,.4);}
+.gtv-btn-ghost{border-color:var(--gtv-line);color:var(--gtv-navy);background:#fff;}
+.gtv-btn-ghost:hover{border-color:var(--gtv-blue);color:var(--gtv-blue);}
+.gtv-btn-sky{background:var(--gtv-sky);color:var(--gtv-navy-deep);}
+.gtv-btn-sky:hover{background:#7ad6f6;transform:translateY(-2px);}
+
+/* 通用段落 */
+.gtv-section{max-width:1200px;margin:0 auto;padding:72px 20px;}
+.gtv-section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:38px;flex-wrap:wrap;}
+.gtv-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:3px;
+  color:var(--gtv-blue);font-weight:600;text-transform:uppercase;margin-bottom:12px;
+}
+.gtv-eyebrow::before{content:"";width:26px;height:2px;background:var(--gtv-sky);border-radius:2px;}
+.gtv-h2{font-size:clamp(24px,3.2vw,34px);line-height:1.3;color:var(--gtv-navy);letter-spacing:.5px;}
+.gtv-h2 span{color:var(--gtv-blue);}
+.gtv-sub{color:var(--gtv-gray);font-size:15px;max-width:640px;margin-top:10px;}
+
+/* 首屏 */
+.gtv-hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 420px at 85% -10%,rgba(94,200,240,.35),transparent 60%),
+    radial-gradient(700px 380px at 5% 110%,rgba(31,111,208,.18),transparent 60%),
+    linear-gradient(160deg,#f2f8fe,#e3effb 55%,#f8fcff);
+}
+.gtv-hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(31,111,208,.13) 1px,transparent 1px);
+  background-size:26px 26px;opacity:.55;
+}
+.gtv-hero-inner{
+  position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:66px 20px 78px;
+  display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center;
+}
+.gtv-hero-tag{
+  display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--gtv-line);
+  border-radius:999px;padding:6px 16px;font-size:13px;color:var(--gtv-blue);font-weight:600;
+  box-shadow:0 6px 18px rgba(15,46,85,.07);margin-bottom:20px;
+}
+.gtv-hero-tag i{width:8px;height:8px;border-radius:50%;background:var(--gtv-sky);font-style:normal;animation:gtv-pulse 1.8s infinite;}
+@keyframes gtv-pulse{0%,100%{box-shadow:0 0 0 0 rgba(94,200,240,.7);}50%{box-shadow:0 0 0 7px rgba(94,200,240,0);}}
+.gtv-hero h1{
+  font-size:clamp(34px,5vw,58px);line-height:1.15;letter-spacing:1px;color:var(--gtv-navy);
+  font-weight:800;margin-bottom:18px;
+}
+.gtv-hero h1 span{
+  background:linear-gradient(120deg,var(--gtv-blue),var(--gtv-sky));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.gtv-hero-lead{font-size:16.5px;color:#33556f;margin-bottom:22px;max-width:560px;}
+.gtv-hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px;}
+.gtv-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:520px;}
+.gtv-stat{
+  background:rgba(255,255,255,.82);border:1px solid var(--gtv-line);border-radius:16px;
+  padding:14px 16px;backdrop-filter:blur(4px);
+}
+.gtv-stat b{display:block;font-size:24px;color:var(--gtv-navy);letter-spacing:.5px;}
+.gtv-stat b i{font-style:normal;font-size:14px;color:var(--gtv-blue);margin-left:2px;}
+.gtv-stat em{font-style:normal;font-size:12.5px;color:var(--gtv-gray);}
+
+.gtv-hero-visual{position:relative;}
+.gtv-hero-main{
+  position:relative;border-radius:24px;overflow:hidden;box-shadow:0 30px 60px rgba(15,46,85,.25);
+  transform:rotate(-1.5deg);transition:.5s;
+}
+.gtv-hero-main:hover{transform:rotate(0) translateY(-4px);}
+.gtv-hero-main img{width:100%;aspect-ratio:16/10;object-fit:cover;}
+.gtv-play-badge{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:66px;height:66px;border-radius:50%;background:rgba(255,255,255,.9);
+  display:grid;place-items:center;box-shadow:0 8px 26px rgba(8,28,54,.35);
+}
+.gtv-play-badge::after{
+  content:"";width:0;height:0;border-left:20px solid var(--gtv-blue);
+  border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px;
+}
+.gtv-hero-float{
+  position:absolute;right:-14px;bottom:-26px;width:62%;background:#fff;border-radius:18px;
+  padding:14px 16px;box-shadow:0 18px 40px rgba(15,46,85,.2);border:1px solid var(--gtv-line);
+  display:flex;gap:12px;align-items:center;
+}
+.gtv-hero-float img{width:64px;height:64px;border-radius:14px;object-fit:cover;flex-shrink:0;}
+.gtv-hero-float b{font-size:14px;color:var(--gtv-navy);display:block;}
+.gtv-hero-float span{font-size:12.5px;color:var(--gtv-gray);}
+.gtv-float-live{
+  position:absolute;left:-16px;top:-16px;background:var(--gtv-gold);color:#3a2500;font-weight:700;
+  font-size:12.5px;padding:7px 15px;border-radius:999px;box-shadow:0 10px 22px rgba(242,169,59,.45);
+  transform:rotate(-4deg);
+}
+
+/* 深度解析 */
+.gtv-about{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
+.gtv-about-text p{margin-bottom:16px;color:#33556f;font-size:15px;}
+.gtv-about-text strong{color:var(--gtv-navy);}
+.gtv-about-cards{display:grid;gap:16px;}
+.gtv-about-card{
+  background:#fff;border:1px solid var(--gtv-line);border-radius:var(--gtv-radius);
+  padding:22px 24px;transition:.3s;display:flex;gap:16px;align-items:flex-start;
+}
+.gtv-about-card:hover{transform:translateY(-4px);box-shadow:var(--gtv-shadow);border-color:#bcd8f2;}
+.gtv-about-icon{
+  width:46px;height:46px;border-radius:14px;flex-shrink:0;display:grid;place-items:center;
+  font-size:20px;background:linear-gradient(140deg,var(--gtv-mist),#dbeafb);color:var(--gtv-blue);
+}
+.gtv-about-card h3{font-size:16.5px;color:var(--gtv-navy);margin-bottom:5px;}
+.gtv-about-card p{font-size:14px;color:var(--gtv-gray);margin:0;}
+
+/* 焦点内容 */
+.gtv-focus-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;gap:20px;}
+.gtv-focus-main{
+  grid-row:span 2;position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--gtv-shadow);
+  border:1px solid var(--gtv-line);
+}
+.gtv-focus-main img{width:100%;height:100%;min-height:420px;object-fit:cover;transition:.6s;}
+.gtv-focus-main:hover img{transform:scale(1.05);}
+.gtv-focus-overlay{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:26px;background:linear-gradient(180deg,transparent 30%,rgba(8,28,54,.88));
+  color:#fff;
+}
+.gtv-focus-overlay .gtv-chip{background:var(--gtv-sky);color:var(--gtv-navy-deep);font-weight:700;}
+.gtv-focus-overlay h3{font-size:22px;margin:12px 0 8px;line-height:1.35;}
+.gtv-focus-overlay p{font-size:13.5px;color:#cfe2f5;margin-bottom:14px;}
+.gtv-focus-meta{display:flex;gap:16px;font-size:12.5px;color:#a9c8e6;}
+.gtv-chip{
+  display:inline-block;font-size:12px;padding:3px 11px;border-radius:999px;
+  background:var(--gtv-mist);color:var(--gtv-blue);font-weight:600;
+}
+.gtv-focus-side{
+  background:#fff;border:1px solid var(--gtv-line);border-radius:18px;overflow:hidden;
+  display:flex;flex-direction:column;transition:.3s;
+}
+.gtv-focus-side:hover{transform:translateY(-4px);box-shadow:var(--gtv-shadow);}
+.gtv-focus-side img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.gtv-focus-side div{padding:16px 18px 18px;}
+.gtv-focus-side h4{font-size:15.5px;color:var(--gtv-navy);margin:8px 0 6px;line-height:1.45;}
+.gtv-focus-side p{font-size:13px;color:var(--gtv-gray);margin-bottom:10px;}
+.gtv-tiny-meta{font-size:12px;color:#8aa2b8;display:flex;gap:12px;}
+
+/* 视频流卡片 */
+.gtv-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.gtv-video-card{
+  background:#fff;border:1px solid var(--gtv-line);border-radius:20px;overflow:hidden;
+  transition:.32s;display:flex;flex-direction:column;
+}
+.gtv-video-card:hover{transform:translateY(-6px);box-shadow:var(--gtv-shadow);border-color:#bcd8f2;}
+.gtv-video-cover{position:relative;overflow:hidden;}
+.gtv-video-cover img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:.6s;}
+.gtv-video-card:hover .gtv-video-cover img{transform:scale(1.07);}
+.gtv-video-cover .gtv-duration{
+  position:absolute;right:10px;bottom:10px;background:rgba(8,28,54,.82);color:#fff;
+  font-size:11.5px;padding:2px 8px;border-radius:6px;
+}
+.gtv-video-cover .gtv-tag{
+  position:absolute;left:10px;top:10px;background:rgba(255,255,255,.94);color:var(--gtv-blue);
+  font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;
+}
+.gtv-video-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1;}
+.gtv-video-body h3{font-size:16px;line-height:1.45;color:var(--gtv-navy);margin-bottom:8px;}
+.gtv-video-body p{font-size:13.2px;color:var(--gtv-gray);flex:1;margin-bottom:12px;}
+.gtv-video-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px dashed var(--gtv-line);padding-top:12px;}
+.gtv-author{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#4a6a8a;}
+.gtv-avatar{
+  width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  font-size:12px;font-weight:700;color:#fff;flex-shrink:0;
+}
+.gtv-actions{display:flex;gap:6px;}
+.gtv-act{
+  display:inline-flex;align-items:center;gap:4px;font-size:12.5px;color:#7b93a9;
+  padding:4px 8px;border-radius:8px;transition:.22s;
+}
+.gtv-act:hover{background:var(--gtv-mist);color:var(--gtv-blue);}
+.gtv-act.gtv-liked{color:#e2604f;}
+.gtv-act.gtv-saved{color:var(--gtv-gold);}
+
+/* 创作者 */
+.gtv-creators{background:linear-gradient(170deg,#f3f9ff,#e9f3fd);border-radius:32px;padding:60px 34px;max-width:1200px;margin:0 auto;}
+.gtv-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.gtv-creator-card{
+  background:#fff;border-radius:20px;padding:24px 20px;text-align:center;
+  border:1px solid var(--gtv-line);transition:.32s;
+}
+.gtv-creator-card:hover{transform:translateY(-6px);box-shadow:var(--gtv-shadow);}
+.gtv-creator-ava{
+  width:66px;height:66px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;
+  font-size:22px;font-weight:800;color:#fff;box-shadow:0 10px 22px rgba(15,46,85,.18);
+}
+.gtv-creator-card h3{font-size:16px;color:var(--gtv-navy);}
+.gtv-creator-card .gtv-field{font-size:12.5px;color:var(--gtv-blue);margin:4px 0 10px;font-weight:600;}
+.gtv-creator-card p{font-size:13px;color:var(--gtv-gray);min-height:56px;}
+.gtv-creator-nums{display:flex;justify-content:center;gap:18px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--gtv-line);font-size:12px;color:var(--gtv-gray);}
+.gtv-creator-nums b{display:block;font-size:15px;color:var(--gtv-navy);}
+
+/* 专题 */
+.gtv-topics{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.gtv-topic{
+  position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--gtv-line);
+  background:#fff;transition:.3s;
+}
+.gtv-topic:hover{transform:translateY(-5px);box-shadow:var(--gtv-shadow);}
+.gtv-topic img{width:100%;aspect-ratio:16/8;object-fit:cover;}
+.gtv-topic-body{padding:18px 20px 22px;}
+.gtv-topic-body h3{font-size:17px;color:var(--gtv-navy);margin:8px 0 8px;}
+.gtv-topic-body p{font-size:13.5px;color:var(--gtv-gray);margin-bottom:14px;}
+.gtv-topic-state{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;}
+.gtv-state-live{color:#2f9b6a;font-weight:700;}
+.gtv-state-soon{color:var(--gtv-gold);font-weight:700;}
+
+/* 影像墙 */
+.gtv-wall{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:120px;gap:14px;}
+.gtv-wall-item{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--gtv-line);}
+.gtv-wall-item img{width:100%;height:100%;object-fit:cover;transition:.5s;}
+.gtv-wall-item:hover img{transform:scale(1.08);}
+.gtv-wall-item span{
+  position:absolute;left:10px;bottom:10px;background:rgba(8,28,54,.78);color:#fff;
+  font-size:12px;padding:3px 10px;border-radius:8px;
+}
+.gtv-wall-a{grid-column:span 2;grid-row:span 2;}
+.gtv-wall-b{grid-column:span 2;grid-row:span 1;}
+.gtv-wall-c{grid-column:span 1;grid-row:span 1;}
+.gtv-wall-d{grid-column:span 1;grid-row:span 2;}
+.gtv-wall-e{grid-column:span 2;grid-row:span 1;}
+
+/* 评价 */
+.gtv-reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.gtv-review{
+  background:#fff;border-radius:18px;padding:24px;border:1px solid var(--gtv-line);
+  position:relative;transition:.3s;
+}
+.gtv-review:hover{transform:translateY(-4px);box-shadow:var(--gtv-shadow);}
+.gtv-review::before{
+  content:"“";position:absolute;top:6px;right:20px;font-size:52px;color:#dbeafb;font-family:Georgia,serif;
+}
+.gtv-review p{font-size:14px;color:#33556f;margin-bottom:16px;position:relative;z-index:1;}
+.gtv-review-user{display:flex;align-items:center;gap:10px;}
+.gtv-review-user b{font-size:13.5px;color:var(--gtv-navy);display:block;}
+.gtv-review-user em{font-style:normal;font-size:12px;color:var(--gtv-gray);}
+
+/* 动态 */
+.gtv-news{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;}
+.gtv-news-list{background:#fff;border:1px solid var(--gtv-line);border-radius:20px;padding:10px 24px;}
+.gtv-news-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px dashed var(--gtv-line);}
+.gtv-news-item:last-child{border-bottom:none;}
+.gtv-news-date{
+  flex-shrink:0;width:64px;text-align:center;background:var(--gtv-mist);border-radius:12px;padding:8px 0;
+}
+.gtv-news-date b{display:block;font-size:19px;color:var(--gtv-blue);line-height:1.1;}
+.gtv-news-date span{font-size:11.5px;color:var(--gtv-gray);}
+.gtv-news-item h3{font-size:15px;color:var(--gtv-navy);margin-bottom:5px;}
+.gtv-news-item p{font-size:13px;color:var(--gtv-gray);}
+.gtv-partners{background:linear-gradient(160deg,var(--gtv-navy),#123f72);border-radius:20px;padding:30px 28px;color:#dcebfa;}
+.gtv-partners h3{font-size:18px;color:#fff;margin-bottom:6px;}
+.gtv-partners > p{font-size:13px;color:#a9c8e6;margin-bottom:22px;}
+.gtv-partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.gtv-partner{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;
+  padding:14px 8px;text-align:center;font-size:13px;color:#cfe2f5;transition:.25s;
+}
+.gtv-partner:hover{background:rgba(94,200,240,.18);color:#fff;}
+
+/* FAQ */
+.gtv-faq{max-width:860px;margin:0 auto;}
+.gtv-faq details{
+  background:#fff;border:1px solid var(--gtv-line);border-radius:14px;margin-bottom:12px;
+  padding:16px 22px;transition:.25s;
+}
+.gtv-faq details[open]{border-color:#bcd8f2;box-shadow:0 10px 26px rgba(15,46,85,.08);}
+.gtv-faq summary{
+  cursor:pointer;font-size:15.5px;font-weight:600;color:var(--gtv-navy);list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.gtv-faq summary::-webkit-details-marker{display:none;}
+.gtv-faq summary::after{content:"+";font-size:20px;color:var(--gtv-blue);transition:.25s;line-height:1;}
+.gtv-faq details[open] summary::after{transform:rotate(45deg);}
+.gtv-faq p{font-size:14px;color:var(--gtv-gray);margin-top:12px;}
+
+/* 联系/投稿 */
+.gtv-contact{
+  background:linear-gradient(150deg,#0f2e55,#16497f 55%,#1f6fd0);border-radius:32px;color:#e6f2fc;
+  padding:54px 44px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;
+  max-width:1200px;margin:0 auto;position:relative;overflow:hidden;
+}
+.gtv-contact::after{
+  content:"";position:absolute;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(94,200,240,.4),transparent 65%);right:-90px;top:-110px;
+}
+.gtv-contact h2{color:#fff;font-size:clamp(24px,3vw,32px);margin-bottom:14px;}
+.gtv-contact p{font-size:14.5px;color:#cfe2f5;margin-bottom:22px;}
+.gtv-contact-list{display:flex;flex-direction:column;gap:12px;font-size:14px;}
+.gtv-contact-list span{display:flex;align-items:center;gap:10px;}
+.gtv-contact-list i{font-style:normal;color:var(--gtv-sky);}
+.gtv-contact-actions{display:flex;flex-direction:column;gap:12px;position:relative;z-index:2;}
+
+/* 页脚 */
+.gtv-footer{background:var(--gtv-navy-deep);color:#9fb9d4;margin-top:80px;padding:56px 20px 26px;}
+.gtv-footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;}
+.gtv-footer-brand b{color:#fff;font-size:17px;display:block;margin-bottom:10px;letter-spacing:.5px;}
+.gtv-footer-brand p{font-size:13px;line-height:1.9;}
+.gtv-footer h4{color:#fff;font-size:14px;margin-bottom:14px;}
+.gtv-footer ul li{font-size:13px;margin-bottom:9px;transition:.22s;}
+.gtv-footer ul li:hover{color:var(--gtv-sky);}
+.gtv-footer-bottom{
+  max-width:1200px;margin:36px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#7f9cb8;
+}
+
+/* 回到顶部 & Toast */
+.gtv-top{
+  position:fixed;right:24px;bottom:28px;width:48px;height:48px;border-radius:50%;
+  background:var(--gtv-blue);color:#fff;display:grid;place-items:center;font-size:20px;
+  box-shadow:0 12px 28px rgba(31,111,208,.4);opacity:0;pointer-events:none;transition:.3s;z-index:150;
+}
+.gtv-top.gtv-show{opacity:1;pointer-events:auto;}
+.gtv-top:hover{background:var(--gtv-navy);transform:translateY(-3px);}
+.gtv-toast{
+  position:fixed;left:50%;bottom:36px;transform:translate(-50%,20px);
+  background:rgba(8,28,54,.94);color:#fff;padding:11px 24px;border-radius:999px;font-size:14px;
+  opacity:0;pointer-events:none;transition:.32s;z-index:300;box-shadow:0 14px 40px rgba(0,0,0,.3);
+}
+.gtv-toast.gtv-show{opacity:1;transform:translate(-50%,0);}
+
+/* 弹窗 */
+.gtv-modal{
+  position:fixed;inset:0;background:rgba(8,28,54,.6);backdrop-filter:blur(4px);
+  display:none;place-items:center;z-index:400;padding:20px;
+}
+.gtv-modal.gtv-show{display:grid;}
+.gtv-modal-card{
+  background:#fff;border-radius:22px;max-width:520px;width:100%;padding:30px 30px 26px;
+  position:relative;box-shadow:0 30px 70px rgba(0,0,0,.35);animation:gtv-pop .3s ease;
+  max-height:86vh;overflow:auto;
+}
+@keyframes gtv-pop{from{transform:translateY(16px) scale(.97);opacity:0;}to{transform:none;opacity:1;}}
+.gtv-modal-card h3{font-size:20px;color:var(--gtv-navy);margin-bottom:8px;}
+.gtv-modal-card > p{font-size:14px;color:var(--gtv-gray);margin-bottom:18px;}
+.gtv-modal-close{
+  position:absolute;right:16px;top:14px;width:34px;height:34px;border-radius:50%;
+  background:var(--gtv-mist);color:var(--gtv-navy);font-size:17px;display:grid;place-items:center;
+}
+.gtv-modal-close:hover{background:#dbeafb;}
+.gtv-form label{display:block;font-size:13.5px;color:var(--gtv-navy);margin-bottom:6px;font-weight:600;}
+.gtv-form input,.gtv-form textarea,.gtv-form select{
+  width:100%;padding:11px 14px;border-radius:12px;border:1px solid var(--gtv-line);
+  font-size:14px;margin-bottom:14px;outline:none;font-family:inherit;color:var(--gtv-ink);
+  background:#f9fcff;transition:.25s;
+}
+.gtv-form input:focus,.gtv-form textarea:focus,.gtv-form select:focus{border-color:var(--gtv-blue);background:#fff;}
+.gtv-form textarea{resize:vertical;min-height:90px;}
+.gtv-modal-tip{font-size:12.5px;color:#8aa2b8;margin-top:10px;}
+.gtv-share-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:8px;}
+.gtv-share-btn{
+  background:var(--gtv-mist);border-radius:12px;padding:14px 4px;font-size:12.5px;color:var(--gtv-navy);
+  text-align:center;transition:.22s;
+}
+.gtv-share-btn:hover{background:#dbeafb;color:var(--gtv-blue);transform:translateY(-2px);}
+
+/* 响应式 */
+@media(max-width:1024px){
+  .gtv-hero-inner{grid-template-columns:1fr;gap:46px;}
+  .gtv-hero-visual{max-width:520px;margin:0 auto;}
+  .gtv-about{grid-template-columns:1fr;}
+  .gtv-focus-grid{grid-template-columns:1fr 1fr;}
+  .gtv-focus-main{grid-row:auto;grid-column:span 2;}
+  .gtv-focus-main img{min-height:300px;}
+  .gtv-video-grid{grid-template-columns:repeat(2,1fr);}
+  .gtv-creator-grid{grid-template-columns:repeat(2,1fr);}
+  .gtv-topics{grid-template-columns:repeat(2,1fr);}
+  .gtv-reviews{grid-template-columns:repeat(2,1fr);}
+  .gtv-news{grid-template-columns:1fr;}
+  .gtv-contact{grid-template-columns:1fr;padding:40px 28px;}
+  .gtv-footer-inner{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:820px){
+  .gtv-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;background:#fff;
+    flex-direction:column;padding:12px 20px 18px;border-bottom:1px solid var(--gtv-line);
+    box-shadow:0 18px 30px rgba(15,46,85,.12);gap:2px;
+  }
+  .gtv-nav.gtv-open{display:flex;}
+  .gtv-header-inner{position:relative;flex-wrap:wrap;}
+  .gtv-menu-btn{display:grid;place-items:center;}
+  .gtv-search input{width:150px;}
+  .gtv-search input:focus{width:170px;}
+  .gtv-stats{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:640px){
+  .gtv-section{padding:52px 16px;}
+  .gtv-header-inner{gap:10px;padding:10px 14px;}
+  .gtv-header-tools{flex:1;justify-content:flex-end;}
+  .gtv-search{flex:1;max-width:180px;}
+  .gtv-search input{width:100%;}
+  .gtv-search input:focus{width:100%;}
+  .gtv-search-tip{width:230px;right:-60px;}
+  .gtv-logo-text em{display:none;}
+  .gtv-announce-track{display:none;}
+  .gtv-stats{grid-template-columns:1fr 1fr;}
+  .gtv-hero-float{position:static;width:100%;margin-top:16px;}
+  .gtv-video-grid,.gtv-topics,.gtv-reviews,.gtv-creator-grid{grid-template-columns:1fr;}
+  .gtv-focus-grid{grid-template-columns:1fr;}
+  .gtv-focus-main{grid-column:span 1;}
+  .gtv-wall{grid-template-columns:repeat(2,1fr);grid-auto-rows:120px;}
+  .gtv-wall-a{grid-column:span 2;grid-row:span 1;}
+  .gtv-wall-d{grid-column:span 1;grid-row:span 1;}
+  .gtv-wall-e{grid-column:span 2;}
+  .gtv-footer-inner{grid-template-columns:1fr;}
+  .gtv-partner-grid{grid-template-columns:repeat(2,1fr);}
+  .gtv-contact-actions{flex-direction:row;flex-wrap:wrap;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶：公告条 + 页头 -->
+<div class="gtv-sticky-wrap">
+  <div class="gtv-announce">
+    <div class="gtv-announce-inner">
+      <span class="gtv-announce-badge">官方发布</span>
+      <div class="gtv-announce-track">
+        <span>新增「城市十二时辰」系列影像 12 期，记录街区里的普通夜晚</span>
+        <span>冬季创作挑战赛报名开启，主题「温暖的一帧」</span>
+        <span>创作者扶持计划第 4 期名单公示，共 26 位原创作者入选</span>
+      </div>
+      <a href="#gtv-news">查看动态</a>
+    </div>
+  </div>
+
+  <header class="gtv-header">
+    <div class="gtv-header-inner">
+      <a class="gtv-logo" href="#gtv-home" aria-label="GTV小蓝官方网站首页">
+        <span class="gtv-logo-mark">GTV</span>
+        <span class="gtv-logo-text">
+          <b>GTV小蓝</b>
+          <em>真实影像社区</em>
+        </span>
+      </a>
+
+      <nav class="gtv-nav" id="gtvNav">
+        <a href="#gtv-home" class="gtv-active">首页</a>
+        <a href="#gtv-about">品牌解析</a>
+        <a href="#gtv-focus">焦点内容</a>
+        <a href="#gtv-videos">热门影像</a>
+        <a href="#gtv-creators">创作者</a>
+        <a href="#gtv-topics">专题企划</a>
+        <a href="#gtv-news">企业动态</a>
+        <a href="#gtv-help">帮助</a>
+      </nav>
+
+      <div class="gtv-header-tools">
+        <div class="gtv-search">
+          <input type="text" id="gtvSearchInput" placeholder="搜索影像 / 创作者 / 话题" aria-label="搜索影像、创作者或话题">
+          <button type="button" id="gtvSearchBtn" aria-label="搜索">🔍</button>
+          <div class="gtv-search-tip" id="gtvSearchTip"></div>
+        </div>
+        <button class="gtv-menu-btn" id="gtvMenuBtn" aria-label="展开导航" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="gtv-hero" id="gtv-home">
+    <div class="gtv-hero-inner">
+      <div class="gtv-hero-copy">
+        <span class="gtv-hero-tag"><i></i> GTV小蓝 官方网站 · 官方原创影像平台</span>
+        <h1>GTV小蓝<span>官网入口</span></h1>
+        <p class="gtv-hero-lead">
+          这里是一个由企业持续运营、以真实为底色的影像社区。我们把镜头交给普通人，也交给专业的创作者，用一支支短片、一段段长镜头，记录生活里那些值得被反复看见的瞬间。作为深耕影像领域的品牌平台，GTV小蓝坚持原创、正版与高清的传播标准，让每一份真诚的表达都被温柔接住。
+        </p>
+        <div class="gtv-hero-actions">
+          <a class="gtv-btn gtv-btn-primary" href="#gtv-videos">浏览精品内容</a>
+          <a class="gtv-btn gtv-btn-ghost" href="#gtv-creators">认识创作者</a>
+          <button class="gtv-btn gtv-btn-sky" id="gtvSubmitBtn" type="button">投稿 / 报名</button>
+        </div>
+        <div class="gtv-stats">
+          <div class="gtv-stat"><b>38<i>万+</i></b><em>社区注册用户</em></div>
+          <div class="gtv-stat"><b>1.6<i>万</i></b><em>原创影像作品</em></div>
+          <div class="gtv-stat"><b>920<i>位</i></b><em>签约创作者</em></div>
+        </div>
+      </div>
+
+      <div class="gtv-hero-visual">
+        <span class="gtv-float-live">本周精选 · 更新中</span>
+        <div class="gtv-hero-main">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f2e55'/%3E%3Cstop offset='.55' stop-color='%231f6fd0'/%3E%3Cstop offset='1' stop-color='%235ec8f0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23g1)'/%3E%3Ccircle cx='640' cy='110' r='120' fill='%235ec8f0' opacity='.25'/%3E%3Ccircle cx='180' cy='420' r='160' fill='%23ffffff' opacity='.06'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.22' stroke-width='2'%3E%3Cpath d='M0 350 L220 240 L420 320 L620 190 L800 260'/%3E%3Cpath d='M0 400 L240 300 L460 380 L660 250 L800 320'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.9'%3E%3Ccircle cx='180' cy='190' r='7'/%3E%3Ccircle cx='520' cy='140' r='5'/%3E%3Ccircle cx='690' cy='330' r='6'/%3E%3C/g%3E%3Crect x='60' y='70' width='150' height='34' rx='17' fill='%23ffffff' opacity='.85'/%3E%3Ctext x='80' y='93' font-family='sans-serif' font-size='15' font-weight='bold' fill='%230f2e55'%3E城市光影计划%3C/text%3E%3C/svg%3E" alt="GTV小蓝官网首屏主视觉：城市光影计划影像封面" width="800" height="500" loading="eager">
+          <span class="gtv-play-badge" aria-hidden="true"></span>
+        </div>
+        <div class="gtv-hero-float">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23eef4fb'/%3E%3Ccircle cx='60' cy='44' r='20' fill='%231f6fd0'/%3E%3Cpath d='M24 112c0-22 16-34 36-34s36 12 36 34z' fill='%235ec8f0'/%3E%3C/svg%3E" alt="创作者头像：片场笔记栏目主理人">
+          <div>
+            <b>片场笔记 · 第 18 期</b>
+            <span>一次跟拍，聊聊镜头背后的取舍</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌深度解析 -->
+  <section class="gtv-section" id="gtv-about">
+    <div class="gtv-section-head">
+      <div>
+        <span class="gtv-eyebrow">Brand Insight</span>
+        <h2 class="gtv-h2">关于 <span>GTV小蓝</span>，以及我们为什么做影像</h2>
+        <p class="gtv-sub">从一间小小的剪辑室出发，到如今持续运营的原创影像社区，我们始终相信：真实，是影像最耐久的力量。</p>
+      </div>
+    </div>
+
+    <div class="gtv-about">
+      <div class="gtv-about-text">
+        <p><strong>GTV小蓝是一个以“真实影像”为核心的原创视频品牌。</strong>作为官方网站，我们把品牌的全部内容沉淀在这里：每一次官方发布、每一期专题企划、每一位签约创作者，都能在这个入口被清晰地看见。我们不是单纯的播放窗口，而是希望搭建一个介于创作者与观众之间的中间地带——它足够专业，能承载行业级的制作标准；也足够温吞，容得下普通人的摇晃镜头和即兴对白。</p>
+        <p>平台自成立起便确立了三件事：其一，坚持原创与正版，所有上架内容均经过原创性核验与授权确认，拒绝搬运与拼贴；其二，坚持高清与稳定，从源片到转码再到分发，形成标准化品质链路；其三，坚持社区与陪伴，创作者在这里不只是投稿者，更是内容生态的共同建设者。我们相信，一个真正值得信赖的品牌，不是靠口号堆出来的，而是靠一期一期内容、一次一次反馈慢慢长出来的。</p>
+        <p>在垂直领域里，GTV小蓝逐渐形成了自己的辨识度：城市探索、在地文化、生活方式记录、创作幕后与人物访谈，构成内容的主体骨架。我们不追求把每个话题都做一遍，而是希望在自己的方向上做到<strong>行业领先</strong>的深度。为此，品牌长期投入创作者扶持计划、版权保护机制与线下共看活动，让内容生态中的每一环都有所回报。</p>
+        <p>如果说影像是一种语言，那么 GTV小蓝 想做的，是为这种语言提供一套公共语法。你可以在这里看到一位县城青年用手机拍下的四季，也能看到专业团队耗时半年的纪录长片；可以看到一次失败的手作尝试，也可以看到一场完整的音乐现场。多元与包容，是平台内容生态的底色。我们不预设什么值得拍，只负责让值得的一直被记录下去。</p>
+        <p>作为企业，我们同样重视社会责任。平台与多所高校影像社团保持长期合作，为年轻创作者提供设备借用、课程与展映机会；每年固定举办两季创作挑战赛，鼓励用户用镜头回应身边的变化。用户至上不是一句客套话，它体现在我们如何处理每一条举报、每一条评论、每一次争议。成长与陪伴，是我们希望与用户共同完成的长期关系。</p>
+      </div>
+
+      <div class="gtv-about-cards">
+        <div class="gtv-about-card">
+          <div class="gtv-about-icon">◎</div>
+          <div>
+            <h3>原创与正版并行</h3>
+            <p>所有内容经原创核验与授权确认，尊重每一位创作者的心血，让专业与匠心被看见。</p>
+          </div>
+        </div>
+        <div class="gtv-about-card">
+          <div class="gtv-about-icon">▣</div>
+          <div>
+            <h3>高清品质链路</h3>
+            <p>从拍摄建议到转码分发，形成标准化的高清流程，保证每一次观看都清晰稳定。</p>
+          </div>
+        </div>
+        <div class="gtv-about-card">
+          <div class="gtv-about-icon">✧</div>
+          <div>
+            <h3>创作者共建设区</h3>
+            <p>扶持计划、课程培训与线下共看，让创作者成为内容生态的共同建设者而不仅是投稿者。</p>
+          </div>
+        </div>
+        <div class="gtv-about-card">
+          <div class="gtv-about-icon">◈</div>
+          <div>
+            <h3>长期主义的品牌</h3>
+            <p>持续运营多年，坚持用户首选与口碑积累，不追逐短期流量，只做值得反复回看的内容。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 -->
+  <section class="gtv-section" id="gtv-focus">
+    <div class="gtv-section-head">
+      <div>
+        <span class="gtv-eyebrow">Focus</span>
+        <h2 class="gtv-h2">本周焦点 · <span>官方精选</span></h2>
+        <p class="gtv-sub">编辑团队每周从海量投稿中挑出的重点推荐，涵盖纪录、访谈与实验影像。</p>
+      </div>
+      <a class="gtv-btn gtv-btn-ghost" href="#gtv-videos">查看全部</a>
+    </div>
+
+    <div class="gtv-focus-grid">
+      <article class="gtv-focus-main">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 700 700'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%230b223d'/%3E%3Cstop offset='.6' stop-color='%23164a80'/%3E%3Cstop offset='1' stop-color='%235ec8f0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='700' height='700' fill='url(%23g2)'/%3E%3Cg fill='%23ffffff' opacity='.1'%3E%3Crect x='80' y='420' width='60' height='200'/%3E%3Crect x='170' y='330' width='60' height='290'/%3E%3Crect x='260' y='380' width='60' height='240'/%3E%3Crect x='350' y='270' width='60' height='350'/%3E%3Crect x='440' y='360' width='60' height='260'/%3E%3Crect x='530' y='300' width='60' height='320'/%3E%3C/g%3E%3Ccircle cx='350' cy='200' r='86' fill='%235ec8f0' opacity='.4'/%3E%3Ccircle cx='350' cy='200' r='48' fill='%23ffffff' opacity='.7'/%3E%3Cpath d='M0 640 Q180 560 350 620 T700 600' stroke='%235ec8f0' stroke-width='4' fill='none' opacity='.6'/%3E%3C/svg%3E" alt="GTV小蓝焦点内容：县城十二时辰纪录长片封面" loading="lazy">
+        <div class="gtv-focus-overlay">
+          <span class="gtv-chip">焦点长片</span>
+          <h3>县城十二时辰：一座小城如何在深夜里保持呼吸</h3>
+          <p>跟拍三个月，走访夜间应急队伍、早餐铺与夜班公交，试图呈现小城不为人知的另一面。</p>
+          <div class="gtv-focus-meta">
+            <span>导演：陈屿</span>
+            <span>时长 42:18</span>
+            <span>更新于 11 月 15 日</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="gtv-focus-side">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='g3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f2a93b'/%3E%3Cstop offset='1' stop-color='%23e2604f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23g3)'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.4' fill='none' stroke-width='3'%3E%3Ccircle cx='240' cy='135' r='60'/%3E%3Ccircle cx='240' cy='135' r='92'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.85'%3E%3Ccircle cx='120' cy='80' r='5'/%3E%3Ccircle cx='360' cy='190' r='5'/%3E%3Ccircle cx='400' cy='70' r='4'/%3E%3C/g%3E%3C/svg%3E" alt="焦点内容封面：一次失败的手作尝试" loading="lazy">
+        <div>
+          <span class="gtv-chip">生活记录</span>
+          <h4>一次失败的手作尝试，和我学到的三件事</h4>
+          <p>做坏的陶杯还是留下来了，它提醒我：慢一点，才有机会做对。</p>
+          <div class="gtv-tiny-meta"><span>林小满</span><span>08:42</span></div>
+        </div>
+      </article>
+
+      <article class="gtv-focus-side">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='g4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232f6b52'/%3E%3Cstop offset='1' stop-color='%237fb08a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23g4)'/%3E%3Cpath d='M0 210 L120 140 L240 190 L360 120 L480 170 L480 270 L0 270 Z' fill='%230b2b1e' opacity='.35'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.55' stroke-width='2'%3E%3Cpath d='M60 270 L60 130'/%3E%3Cpath d='M60 150 L30 120'/%3E%3Cpath d='M60 170 L92 136'/%3E%3C/g%3E%3Ccircle cx='380' cy='70' r='26' fill='%23f6e7a8' opacity='.85'/%3E%3C/svg%3E" alt="焦点内容封面：山野里的一次对话" loading="lazy">
+        <div>
+          <span class="gtv-chip">人物访谈</span>
+          <h4>山野对话：和三位自然向导聊聊四季</h4>
+          <p>他们把整座山当成办公室，也把每次出发当成回家。</p>
+          <div class="gtv-tiny-meta"><span>栏目组</span><span>19:05</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 热门影像 -->
+  <section class="gtv-section" id="gtv-videos">
+    <div class="gtv-section-head">
+      <div>
+        <span class="gtv-eyebrow">Trending</span>
+        <h2 class="gtv-h2">热门影像 · <span>社区正在看</span></h2>
+        <p class="gtv-sub">来自社区的九支近期热门作品，题材各不相同，却都保留了真实的手感。</p>
+      </div>
+    </div>
+
+    <div class="gtv-video-grid" id="gtvVideoGrid">
+      <article class="gtv-video-card">
+        <div class="gtv-video-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f2e55'/%3E%3Cstop offset='1' stop-color='%235ec8f0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v1)'/%3E%3Crect x='60' y='60' width='360' height='150' rx='10' fill='%23ffffff' opacity='.12'/%3E%3Cpath d='M200 120 L280 155 L200 190 Z' fill='%23ffffff' opacity='.85'/%3E%3C/svg%3E" alt="视频封面：凌晨四点的城市早餐地图" loading="lazy">
+          <span class="gtv-tag">城市探索</span>
+          <span class="gtv-duration">12:36</span>
+        </div>
+        <div class="gtv-video-body">
+          <h3>凌晨四点的城市早餐地图</h3>
+          <p>跟着三位早餐摊主，走过城市醒来前的那两个小时。</p>
+          <div class="gtv-video-footer">
+            <span class="gtv-author"><span class="gtv-avatar" style="background:#1f6fd0">周</span>周行野</span>
+            <div class="gtv-actions">
+              <button class="gtv-act gtv-like" type="button" data-count="1286">♡ <span>1286</span></button>
+              <button class="gtv-act gtv-save" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="gtv-video-card">
+        <div class="gtv-video-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f2a93b'/%3E%3Cstop offset='1' stop-color='%23f2d2a0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v2)'/%3E%3Ccircle cx='150' cy='135' r='70' fill='%23ffffff' opacity='.35'/%3E%3Crect x='250' y='80' width='170' height='110' rx='14' fill='%23ffffff' opacity='.5'/%3E%3C/svg%3E" alt="视频封面：一碗面的三十七种做法" loading="lazy">
+          <span class="gtv-tag">美食烹饪</span>
+          <span class="gtv-duration">09:21</span>
+        </div>
+        <div class="gtv-video-body">
+          <h3>一碗面的三十七种做法</h3>
+          <p>从北到南，面条在锅里翻腾出的地方性格。</p>
+          <div class="gtv-video-footer">
+            <span class="gtv-author"><span class="gtv-avatar" style="background:#e2604f">苏</span>苏禾厨房</span>
+            <div class="gtv-actions">
+              <button class="gtv-act gtv-like" type="button" data-count="894">♡ <span>894</span></button>
+              <button class="gtv-act gtv-save" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="gtv-video-card">
+        <div class="gtv-video-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232f6b52'/%3E%3Cstop offset='1' stop-color='%23a7c9a0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v3)'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.5' stroke-width='2' fill='none'%3E%3Cpath d='M40 230 Q160 120 300 200 T470 140'/%3E%3Cpath d='M40 250 Q180 160 320 220 T470 170'/%3E%3C/g%3E%3Ccircle cx='380' cy='70' r='20' fill='%23ffffff' opacity='.6'/%3E%3C/svg%3E" alt="视频封面：徒步七十二小时，我和山的一次对话" loading="lazy">
+          <span class="gtv-tag">户外活动</span>
+          <span class="gtv-duration">26:47</span>
+        </div>
+        <div class="gtv-video-body">
+          <h3>徒步七十二小时，我和山的一次对话</h3>
+          <p>没有信号的三天，反而听清了心里很多声音。</p>
+          <div class="gtv-video-footer">
+            <span class="gtv-author"><span class="gtv-avatar" style="background:#2f6b52">何</span>何往</span>
+            <div class="gtv-actions">
+              <button class="gtv-act gtv-like" type="button" data-count="2017">♡ <span>2017</span></button>
+              <button class="gtv-act gtv-save" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="gtv-video-card">
+        <div class="gtv-video-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237a4d8f'/%3E%3Cstop offset='1' stop-color='%23c9a7d9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v4)'/%3E%3Cg fill='%23ffffff' opacity='.16'%3E%3Crect x='50' y='150' width='50' height='120'/%3E%3Crect x='120' y='110' width='50' height='160'/%3E%3Crect x='190' y='160' width='50' height='110'/%3E%3Crect x='260' y='90' width='50' height='180'/%3E%3Crect x='330' y='130' width='50' height='140'/%3E%3C/g%3E%3Ccircle cx='380' cy='70' r='26' fill='%23ffffff' opacity='.7'/%3E%3C/svg%3E" alt="视频封面：一间独立书店的十年" loading="lazy">
+          <span class="gtv-tag">文化访谈</span>
+          <span class="gtv-duration">15:52</span>
+        </div>
+        <div class="gtv-video-body">
+          <h3>一间独立书店的十年</h3>
+          <p>从赔钱到收支平衡，店主说：书不是商品，是见面理由。</p>
+          <div class="gtv-video-footer">
+            <span class="gtv-author"><span class="gtv-avatar" style="background:#7a4d8f">顾</span>顾南声</span>
+            <div class="gtv-actions">
+              <button class="gtv-act gtv-like" type="button" data-count="1563">♡ <span>1563</span></button>
+              <button class="gtv-act gtv-save" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="gtv-video-card">
+        <div class="gtv-video-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322344a'/%3E%3Cstop offset='1' stop-color='%23506f8f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v5)'/%3E%3Cg stroke='%235ec8f0' stroke-width='2' fill='none' opacity='.8'%3E%3Cpath d='M80 200 L160 120 L240 170 L320 90 L400 150'/%3E%3C/g%3E%3Cg fill='%235ec8f0'%3E%3Ccircle cx='160' cy='120' r='6'/%3E%3Ccircle cx='320' cy='90' r='6'/%3E%3C/g%3E%3C/svg%3E" alt="视频封面：一个创作者的剪辑台" loading="lazy">
+          <span class="gtv-tag">创作幕后</span>
+          <span class="gtv-duration">11:08</span>
+        </div>
+        <div class="gtv-video-body">
+          <h3>一个创作者的剪辑台</h3>
+          <p>镜头之外，时间线上那些被删掉的片段，往往才是答案。</p>
+          <div class="gtv-video-footer">
+            <span class="gtv-author"><span class="gtv-avatar" style="background:#22344a">秦</span>秦编辑</span>
+            <div class="gtv-actions">
+              <button class="gtv-act gtv-like" type="button" data-count="762">♡ <span>762</span></button>
+              <button class="gtv-act gtv-save" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="gtv-video-card">
+        <div class="gtv-video-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v6' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23d9584a'/%3E%3Cstop offset='1' stop-color='%23f2c1a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v6)'/%3E%3Cpath d='M120 190 L180 120 L240 170 L300 100 L360 160' stroke='%23ffffff' stroke-width='5' fill='none' opacity='.7'/%3E%3Ccircle cx='90' cy='80' r='28' fill='%23ffffff' opacity='.55'/%3E%3C/svg%3E" alt="视频封面：我在老城区修了三个月椅子" loading="lazy">
+          <span class="gtv-tag">手作DIY</span>
+          <span class="gtv-duration">18:30</span>
+        </div>
+        <div class="gtv-video-body">
+          <h3>我在老城区修了三个月椅子</h3>
+          <p>一门快被忘记的手艺，和一位不愿意关店的老师傅。</p>
+          <div class="gtv-video-footer">
+            <span class="gtv-author"><span class="gtv-avatar" style="background:#d9584a">宋</span>宋也</span>
+            <div class="gtv-actions">
+              <button class="gtv-act gtv-like" type="button" data-count="1134">♡ <span>1134</span></button>
+              <button class="gtv-act gtv-save" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="gtv-video-card">
+        <div class="gtv-video-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v7' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231c5a6e'/%3E%3Cstop offset='1' stop-color='%236ec2c2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v7)'/%3E%3Cpath d='M0 190 Q120 150 240 185 T480 175' stroke='%23ffffff' stroke-width='4' fill='none' opacity='.55'/%3E%3Cpath d='M0 220 Q120 185 240 215 T480 205' stroke='%23ffffff' stroke-width='3' fill='none' opacity='.4'/%3E%3Ccircle cx='370' cy='80' r='30' fill='%23ffffff' opacity='.5'/%3E%3C/svg%3E" alt="视频封面：河边的早晨练习" loading="lazy">
+          <span class="gtv-tag">健康运动</span>
+          <span class="gtv-duration">07:45</span>
+        </div>
+        <div class="gtv-video-body">
+          <h3>河边的早晨练习</h3>
+          <p>他把晨跑拍成了流水账，却让很多人重新起了床。</p>
+          <div class="gtv-video-footer">
+            <span class="gtv-author"><span class="gtv-avatar" style="background:#1c5a6e">陆</span>陆一川</span>
+            <div class="gtv-actions">
+              <button class="gtv-act gtv-like" type="button" data-count="648">♡ <span>648</span></button>
+              <button class="gtv-act gtv-save" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="gtv-video-card">
+        <div class="gtv-video-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v8' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233b3a52'/%3E%3Cstop offset='1' stop-color='%23807d9e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v8)'/%3E%3Cg fill='%23ffffff' opacity='.3'%3E%3Ccircle cx='140' cy='90' r='34'/%3E%3Ccircle cx='210' cy='70' r='22'/%3E%3C/g%3E%3Crect x='250' y='120' width='180' height='100' rx='12' fill='%23ffffff' opacity='.16'/%3E%3Cg stroke='%235ec8f0' stroke-width='2' opacity='.7'%3E%3Cpath d='M60 230 L120 200 L180 220 L240 190 L300 210'/%3E%3C/g%3E%3C/svg%3E" alt="视频封面：音乐现场 · 天台上的四个人" loading="lazy">
+          <span class="gtv-tag">音乐现场</span>
+          <span class="gtv-duration">24:12</span>
+        </div>
+        <div class="gtv-video-body">
+          <h3>音乐现场 · 天台上的四个人</h3>
+          <p>一场没有观众席的演出，风声就是最好的和声。</p>
+          <div class="gtv-video-footer">
+            <span class="gtv-author"><span class="gtv-avatar" style="background:#3b3a52">橙</span>橙色噪点</span>
+            <div class="gtv-actions">
+              <button class="gtv-act gtv-like" type="button" data-count="1889">♡ <span>1889</span></button>
+              <button class="gtv-act gtv-save" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="gtv-video-card">
+        <div class="gtv-video-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v9' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23a86b3c'/%3E%3Cstop offset='1' stop-color='%23e8c9a0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v9)'/%3E%3Cg fill='%23ffffff' opacity='.24'%3E%3Crect x='70' y='90' width='90' height='120' rx='10'/%3E%3Crect x='180' y='60' width='90' height='150' rx='10'/%3E%3Crect x='290' y='110' width='90' height='100' rx='10'/%3E%3C/g%3E%3Cpath d='M40 240 L440 240' stroke='%23ffffff' stroke-width='3' opacity='.5'/%3E%3C/svg%3E" alt="视频封面：旧物改造，让外婆的柜子留下来" loading="lazy">
+          <span class="gtv-tag">家居收纳</span>
+          <span class="gtv-duration">13:27</span>
+        </div>
+        <div class="gtv-video-body">
+          <h3>旧物改造，让外婆的柜子留下来</h3>
+          <p>它有点旧，有点笨重，但每次打开都能闻到童年。</p>
+          <div class="gtv-video-footer">
+            <span class="gtv-author"><span class="gtv-avatar" style="background:#a86b3c">阿</span>阿橘生活</span>
+            <div class="gtv-actions">
+              <button class="gtv-act gtv-like" type="button" data-count="945">♡ <span>945</span></button>
+              <button class="gtv-act gtv-save" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 创作者 -->
+  <section class="gtv-section" id="gtv-creators" style="padding-left:0;padding-right:0;">
+    <div class="gtv-creators">
+      <div class="gtv-section-head">
+        <div>
+          <span class="gtv-eyebrow">Creators</span>
+          <h2 class="gtv-h2">创作者矩阵 · <span>内容生态的中坚</span></h2>
+          <p class="gtv-sub">他们是平台的原创主力，也是社区里最活跃的陪伴者。点击卡片可查看档案。</p>
+        </div>
+      </div>
+
+      <div class="gtv-creator-grid">
+        <article class="gtv-creator-card" data-creator="周行野" data-bio="城市纪录片导演，擅长用长镜头记录街区日常，代表作《县城十二时辰》。" data-works="86" data-fans="12.4万">
+          <div class="gtv-creator-ava" style="background:linear-gradient(140deg,#1f6fd0,#5ec8f0)">周</div>
+          <h3>周行野</h3>
+          <div class="gtv-field">城市探索 / 纪录长片</div>
+          <p>相信街角比景区更值得拍摄，习惯在凌晨出门寻找故事。</p>
+          <div class="gtv-creator-nums">
+            <div><b>86</b>作品</div>
+            <div><b>12.4万</b>关注</div>
+          </div>
+        </article>
+
+        <article class="gtv-creator-card" data-creator="苏禾厨房" data-bio="美食内容创作者，专注家常菜与地方饮食文化，出版过一本小册子。" data-works="132" data-fans="18.7万">
+          <div class="gtv-creator-ava" style="background:linear-gradient(140deg,#e2604f,#f2a93b)">苏</div>
+          <h3>苏禾厨房</h3>
+          <div class="gtv-field">美食烹饪 / 在地饮食</div>
+          <p>把厨房当作采访现场，每道菜背后都有一个人。</p>
+          <div class="gtv-creator-nums">
+            <div><b>132</b>作品</div>
+            <div><b>18.7万</b>关注</div>
+          </div>
+        </article>
+
+        <article class="gtv-creator-card" data-creator="何往" data-bio="户外影像作者，长期行走于山野之间，主张轻装与低干扰拍摄。" data-works="61" data-fans="9.3万">
+          <div class="gtv-creator-ava" style="background:linear-gradient(140deg,#2f6b52,#a7c9a0)">何</div>
+          <h3>何往</h3>
+          <div class="gtv-field">户外活动 / 自然记录</div>
+          <p>用三天换一段十分钟的片子，觉得这样很划算。</p>
+          <div class="gtv-creator-nums">
+            <div><b>61</b>作品</div>
+            <div><b>9.3万</b>关注</div>
+          </div>
+        </article>
+
+        <article class="gtv-creator-card" data-creator="顾南声" data-bio="文化访谈栏目主理人，关注独立书店、剧场与小型文化空间。" data-works="74" data-fans="7.9万">
+          <div class="gtv-creator-ava" style="background:linear-gradient(140deg,#7a4d8f,#c9a7d9)">顾</div>
+          <h3>顾南声</h3>
+          <div class="gtv-field">文化访谈 / 深度对谈</div>
+          <p>不擅长提问，但很擅长安静地听完对方的回答。</p>
+          <div class="gtv-creator-nums">
+            <div><b>74</b>作品</div>
+            <div><b>7.9万</b>关注</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="gtv-section" id="gtv-topics">
+    <div class="gtv-section-head">
+      <div>
+        <span class="gtv-eyebrow">Series</span>
+        <h2 class="gtv-h2">专题企划 · <span>官方发布</span></h2>
+        <p class="gtv-sub">以季度为单位的系列策划，围绕一个母题持续更新，形成可回看的内容档案。</p>
+      </div>
+    </div>
+
+    <div class="gtv-topics">
+      <article class="gtv-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 240'%3E%3Cdefs%3E%3ClinearGradient id='t1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f2e55'/%3E%3Cstop offset='1' stop-color='%235ec8f0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='240' fill='url(%23t1)'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.3' stroke-width='2' fill='none'%3E%3Cpath d='M0 170 L90 110 L180 160 L270 100 L360 150 L480 90'/%3E%3C/g%3E%3Ccircle cx='120' cy='70' r='22' fill='%23ffffff' opacity='.5'/%3E%3C/svg%3E" alt="专题封面：城市十二时辰系列企划" loading="lazy">
+        <div class="gtv-topic-body">
+          <span class="gtv-chip">城市探索</span>
+          <h3>城市十二时辰</h3>
+          <p>十二座城市，十二段昼夜交替里的寻常时刻。已更新至第 12 期。</p>
+          <div class="gtv-topic-state"><span class="gtv-state-live">● 更新中</span><span>共 12 期</span></div>
+        </div>
+      </article>
+
+      <article class="gtv-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 240'%3E%3Cdefs%3E%3ClinearGradient id='t2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23d9584a'/%3E%3Cstop offset='1' stop-color='%23f2c1a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='240' fill='url(%23t2)'/%3E%3Cg fill='%23ffffff' opacity='.3'%3E%3Ccircle cx='160' cy='120' r='56'/%3E%3Crect x='250' y='70' width='150' height='100' rx='14'/%3E%3C/g%3E%3C/svg%3E" alt="专题封面：一间屋子里的手艺系列企划" loading="lazy">
+        <div class="gtv-topic-body">
+          <span class="gtv-chip">手作DIY</span>
+          <h3>一间屋子里的手艺</h3>
+          <p>探访仍在坚持手工制作的工坊，记录匠人们一天的工作节奏。</p>
+          <div class="gtv-topic-state"><span class="gtv-state-live">● 更新中</span><span>共 8 期</span></div>
+        </div>
+      </article>
+
+      <article class="gtv-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 240'%3E%3Cdefs%3E%3ClinearGradient id='t3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232f6b52'/%3E%3Cstop offset='1' stop-color='%23c7ddb5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='240' fill='url(%23t3)'/%3E%3Cpath d='M0 200 Q120 140 240 180 T480 160 L480 240 L0 240 Z' fill='%230b2b1e' opacity='.35'/%3E%3Ccircle cx='380' cy='62' r='24' fill='%23ffffff' opacity='.7'/%3E%3C/svg%3E" alt="专题封面：四季来信系列企划" loading="lazy">
+        <div class="gtv-topic-body">
+          <span class="gtv-chip">治愈影像</span>
+          <h3>四季来信</h3>
+          <p>按节气发布的生活短片，用影像给每个季节写一封信。</p>
+          <div class="gtv-topic-state"><span class="gtv-state-soon">○ 筹备中</span><span>预计 12 月上线</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 影像墙 -->
+  <section class="gtv-section" id="gtv-wall">
+    <div class="gtv-section-head">
+      <div>
+        <span class="gtv-eyebrow">Gallery</span>
+        <h2 class="gtv-h2">用户作品墙 · <span>定格的一帧</span></h2>
+        <p class="gtv-sub">从社区投稿中挑选的静帧，它们或许不是最完美的，但都是真实的。</p>
+      </div>
+    </div>
+
+    <div class="gtv-wall">
+      <figure class="gtv-wall-item gtv-wall-a">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Cdefs%3E%3ClinearGradient id='w1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f2e55'/%3E%3Cstop offset='1' stop-color='%235ec8f0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23w1)'/%3E%3Ccircle cx='440' cy='120' r='70' fill='%23ffffff' opacity='.28'/%3E%3Cpath d='M0 300 L150 220 L300 290 L450 210 L600 270 L600 400 L0 400 Z' fill='%23081836' opacity='.45'/%3E%3C/svg%3E" alt="作品墙：清晨码头的第一缕光" loading="lazy">
+        <span>清晨码头 · 周行野</span>
+      </figure>
+      <figure class="gtv-wall-item gtv-wall-b">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 300'%3E%3Cdefs%3E%3ClinearGradient id='w2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f2a93b'/%3E%3Cstop offset='1' stop-color='%23f7e0bd'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='300' fill='url(%23w2)'/%3E%3Ccircle cx='200' cy='150' r='60' fill='%23ffffff' opacity='.4'/%3E%3Crect x='330' y='90' width='180' height='120' rx='12' fill='%23ffffff' opacity='.35'/%3E%3C/svg%3E" alt="作品墙：厨房里刚出锅的一碗汤面" loading="lazy">
+        <span>灶台边 · 苏禾厨房</span>
+      </figure>
+      <figure class="gtv-wall-item gtv-wall-c">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cdefs%3E%3ClinearGradient id='w3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237a4d8f'/%3E%3Cstop offset='1' stop-color='%23c9a7d9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='300' fill='url(%23w3)'/%3E%3Cg fill='%23ffffff' opacity='.2'%3E%3Crect x='40' y='150' width='40' height='150'/%3E%3Crect x='100' y='110' width='40' height='190'/%3E%3Crect x='160' y='170' width='40' height='130'/%3E%3Crect x='220' y='90' width='40' height='210'/%3E%3C/g%3E%3C/svg%3E" alt="作品墙：书架间透进来的一道光" loading="lazy">
+        <span>书店午后 · 顾南声</span>
+      </figure>
+      <figure class="gtv-wall-item gtv-wall-d">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 600'%3E%3Cdefs%3E%3ClinearGradient id='w4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232f6b52'/%3E%3Cstop offset='1' stop-color='%23a7c9a0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='600' fill='url(%23w4)'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.55' stroke-width='3' fill='none'%3E%3Cpath d='M40 600 Q80 380 150 300 T260 100'/%3E%3Cpath d='M80 600 Q140 420 200 320 T280 180'/%3E%3C/g%3E%3C/svg%3E" alt="作品墙：山路上被风吹动的草" loading="lazy">
+        <span>半山腰 · 何往</span>
+      </figure>
+      <figure class="gtv-wall-item gtv-wall-b">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 300'%3E%3Cdefs%3E%3ClinearGradient id='w5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322344a'/%3E%3Cstop offset='1' stop-color='%23506f8f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='300' fill='url(%23w5)'/%3E%3Cg stroke='%235ec8f0' stroke-width='3' fill='none' opacity='.8'%3E%3Cpath d='M60 240 L180 120 L300 200 L420 90 L540 170'/%3E%3C/g%3E%3C/svg%3E" alt="作品墙：剪辑时间轴上的一条音频" loading="lazy">
+        <span>时间线 · 秦编辑</span>
+      </figure>
+      <figure class="gtv-wall-item gtv-wall-e">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 300'%3E%3Cdefs%3E%3ClinearGradient id='w6' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231c5a6e'/%3E%3Cstop offset='1' stop-color='%236ec2c2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='300' fill='url(%23w6)'/%3E%3Cpath d='M0 220 Q150 170 300 210 T600 190' stroke='%23ffffff' stroke-width='4' fill='none' opacity='.5'/%3E%3Ccircle cx='480' cy='80' r='34' fill='%23ffffff' opacity='.55'/%3E%3C/svg%3E" alt="作品墙：河堤上跑步的人影" loading="lazy">
+        <span>晨跑 · 陆一川</span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="gtv-section" id="gtv-reviews">
+    <div class="gtv-section-head">
+      <div>
+        <span class="gtv-eyebrow">Voices</span>
+        <h2 class="gtv-h2">社区声音 · <span>值得信赖的口碑</span></h2>
+        <p class="gtv-sub">来自不同地区、不同身份的用户，他们眼中的 GTV小蓝。</p>
+      </div>
+    </div>
+
+    <div class="gtv-reviews">
+      <div class="gtv-review">
+        <p>在这里刷到的片子有一种很松弛的质感，不像被算法推着走。上周看了一个拍菜市场的短片，看完特别想去逛早市。</p>
+        <div class="gtv-review-user">
+          <span class="gtv-avatar" style="background:#1f6fd0">阿</span>
+          <div><b>阿青</b><em>普通观众 · 使用 2 年</em></div>
+        </div>
+      </div>
+      <div class="gtv-review">
+        <p>作为投稿者，最直接的感受是反馈很具体。编辑会告诉你哪一段节奏慢了、哪个转场可以省掉，不是模板式回复。</p>
+        <div class="gtv-review-user">
+          <span class="gtv-avatar" style="background:#e2604f">小</span>
+          <div><b>小满</b><em>独立创作者 · 投稿 31 次</em></div>
+        </div>
+      </div>
+      <div class="gtv-review">
+        <p>我是做地方文旅的，平台的城市专题帮我们记录了很多快要消失的老手艺，这种内容留下来比宣传更有意义。</p>
+        <div class="gtv-review-user">
+          <span class="gtv-avatar" style="background:#2f6b52">老</span>
+          <div><b>老许</b><em>合作机构负责人</em></div>
+        </div>
+      </div>
+      <div class="gtv-review">
+        <p>高清确实做到了，手机上看细节也不糊。家里的长辈也能自己找到想看的内容，网站的导航做得比较清楚。</p>
+        <div class="gtv-review-user">
+          <span class="gtv-avatar" style="background:#7a4d8f">林</span>
+          <div><b>林先生</b><em>会员用户 · 使用 3 年</em></div>
+        </div>
+      </div>
+      <div class="gtv-review">
+        <p>参加过一次线下共看，人不多但氛围很好。放完片子大家聊了很久，感觉像是认识很久的朋友。</p>
+        <div class="gtv-review-user">
+          <span class="gtv-avatar" style="background:#22344a">周</span>
+          <div><b>周末</b><em>社区活跃用户</em></div>
+        </div>
+      </div>
+      <div class="gtv-review">
+        <p>希望以后能多一些幕后类的内容，我特别爱看别人怎么剪片。这一块目前还不错，够追一阵子。</p>
+        <div class="gtv-review-user">
+          <span class="gtv-avatar" style="background:#a86b3c">橙</span>
+          <div><b>橙色噪点</b><em>学生创作者</em></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 & 合作 -->
+  <section class="gtv-section" id="gtv-news">
+    <div class="gtv-section-head">
+      <div>
+        <span class="gtv-eyebrow">Updates</span>
+        <h2 class="gtv-h2">企业动态 · <span>持续运营中</span></h2>
+        <p class="gtv-sub">品牌资讯、内容更新与线下活动信息，均通过官方渠道同步发布。</p>
+      </div>
+    </div>
+
+    <div class="gtv-news">
+      <div class="gtv-news-list">
+        <div class="gtv-news-item">
+          <div class="gtv-news-date"><b>18</b><span>11月</span></div>
+          <div>
+            <h3>「温暖的一帧」冬季创作挑战赛开启报名</h3>
+            <p>面向所有用户开放，主题为记录身边温暖的真实瞬间，报名截止 12 月 20 日。</p>
+          </div>
+        </div>
+        <div class="gtv-news-item">
+          <div class="gtv-news-date"><b>15</b><span>11月</span></div>
+          <div>
+            <h3>焦点长片《县城十二时辰》正式上线</h3>
+            <p>历时三个月跟拍，记录小城夜间的值守者与守夜人，官方高清版本同步更新。</p>
+          </div>
+        </div>
+        <div class="gtv-news-item">
+          <div class="gtv-news-date"><b>09</b><span>11月</span></div>
+          <div>
+            <h3>创作者扶持计划第 4 期名单公示</h3>
+            <p>共 26 位原创作者入选，将获得设备支持、课程培训与专题推荐位。</p>
+          </div>
+        </div>
+        <div class="gtv-news-item">
+          <div class="gtv-news-date"><b>02</b><span>11月</span></div>
+          <div>
+            <h3>平台完成新一轮高清播放能力升级</h3>
+            <p>优化了弱网环境下的加载体验，移动端首帧速度较此前提升明显。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gtv-partners">
+        <h3>合作品牌与伙伴</h3>
+        <p>我们与多家机构保持长期内容合作，共同推动原创影像的传播与保护。</p>
+        <div class="gtv-partner-grid">
+          <div class="gtv-partner">城市影像馆</div>
+          <div class="gtv-partner">青禾文化</div>
+          <div class="gtv-partner">南岭书店联盟</div>
+          <div class="gtv-partner">行知纪录工作室</div>
+          <div class="gtv-partner">长街文旅</div>
+          <div class="gtv-partner">声场音乐计划</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="gtv-section" id="gtv-help">
+    <div class="gtv-section-head" style="justify-content:center;text-align:center;">
+      <div>
+        <span class="gtv-eyebrow">Help</span>
+        <h2 class="gtv-h2">常见问题 · <span>帮助中心</span></h2>
+        <p class="gtv-sub" style="margin-left:auto;margin-right:auto;">关于官网入口、投稿、版权与使用的常见疑问，整理如下。</p>
+      </div>
+    </div>
+
+    <div class="gtv-faq">
+      <details open>
+        <summary>如何确认自己访问的是 GTV小蓝 官方网站？</summary>
+        <p>官方入口统一通过品牌公告与官方账号对外发布，页面顶部会展示当前的最新公告信息。如遇可疑页面，建议通过官方账号核对链接，不要轻易在陌生页面提交个人信息。</p>
+      </details>
+      <details>
+        <summary>投稿有什么具体要求？</summary>
+        <p>作品需为原创，画面与声音版权清晰；时长建议 3 至 45 分钟；分辨率不低于 1080P。投稿时可附上创作说明，便于编辑理解你的表达意图。</p>
+      </details>
+      <details>
+        <summary>平台如何保护创作者版权？</summary>
+        <p>所有上架内容均经过原创性核验与授权确认，并提供版权存证记录。若发现搬运或盗用，可通过举报入口提交证据，平台会在收到后按流程处理。</p>
+      </details>
+      <details>
+        <summary>可以下载自己的作品吗？</summary>
+        <p>可以。创作者可在个人中心对自己的源文件进行下载与备份；其他用户如需引用，请先取得创作者授权，并注明出处。</p>
+      </details>
+      <details>
+        <summary>如何参加创作挑战赛与线下活动？</summary>
+        <p>挑战赛一般在活动专题页开放报名，需填写基本信息并提交作品链接。线下共看与工作坊会提前在企业动态中公告，名额有限，按报名顺序确认。</p>
+      </details>
+      <details>
+        <summary>内容更新频率是怎样的？</summary>
+        <p>焦点内容每周更新一次，热门影像每日持续收录，专题企划按季度推进。品牌资讯与官方发布会在公告条与企业动态中同步。</p>
+      </details>
+      <details>
+        <summary>遇到违规内容如何反馈？</summary>
+        <p>可在对应内容页面使用举报功能，选择违规类型并补充说明。平台设有专门的审核流程，处理结果会通过站内通知反馈。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 联系 / 投稿 -->
+  <section class="gtv-section" id="gtv-contact" style="padding-top:0;">
+    <div class="gtv-contact">
+      <div>
+        <h2>把你的影像，交给这里</h2>
+        <p>无论是一段十分钟的日常，还是一部筹备已久的纪录长片，我们都愿意认真看完。品牌官方邮箱与合作通道长期开放，期待与你相遇。</p>
+        <div class="gtv-contact-list">
+          <span><i>✉</i> 投稿与合作：hello@gtvxiaolan.example</span>
+          <span><i>☎</i> 商务咨询：400-000-0000（工作日 10:00–18:00）</span>
+          <span><i>◎</i> 办公地址：城市影像产业园 A 座 3 层</span>
+        </div>
+      </div>
+      <div class="gtv-contact-actions">
+        <button class="gtv-btn gtv-btn-sky" type="button" id="gtvContactSubmit">立即投稿</button>
+        <button class="gtv-btn gtv-btn-ghost" type="button" id="gtvCopyBtn" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.35);">复制官网链接</button>
+        <button class="gtv-btn gtv-btn-ghost" type="button" id="gtvShareBtn" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.35);">分享给朋友</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="gtv-footer">
+  <div class="gtv-footer-inner">
+    <div class="gtv-footer-brand">
+      <b>GTV小蓝 · 官方网站</b>
+      <p>GTV小蓝是一个以真实影像为核心的原创视频品牌与内容社区，深耕城市探索、在地文化与生活方式记录。平台坚持原创、正版与高清标准，为创作者与企业搭建高品质内容生态，持续运营，陪伴每一次真诚的表达。</p>
+    </div>
+    <div>
+      <h4>站内导航</h4>
+      <ul>
+        <li><a href="#gtv-home">首页</a></li>
+        <li><a href="#gtv-about">品牌解析</a></li>
+        <li><a href="#gtv-videos">热门影像</a></li>
+        <li><a href="#gtv-creators">创作者</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>内容与社区</h4>
+      <ul>
+        <li><a href="#gtv-topics">专题企划</a></li>
+        <li><a href="#gtv-wall">作品墙</a></li>
+        <li><a href="#gtv-news">企业动态</a></li>
+        <li><a href="#gtv-help">帮助中心</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>关于与联系</h4>
+      <ul>
+        <li><a href="#gtv-contact">投稿与合作</a></li>
+        <li><a href="#gtv-contact">商务咨询</a></li>
+        <li><a href="#gtv-help">版权说明</a></li>
+        <li><a href="#gtv-help">反馈建议</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="gtv-footer-bottom">
+    <span>GTV小蓝官方网站 | 版权所有 © 2026 | 持续运营中</span>
+    <span>内容均为原创或经授权发布 · 备案信息以官方公告为准</span>
+  </div>
+</footer>
+
+<button class="gtv-top" id="gtvTopBtn" aria-label="回到顶部">↑</button>
+<div class="gtv-toast" id="gtvToast" role="status" aria-live="polite"></div>
+
+<!-- 投稿弹窗 -->
+<div class="gtv-modal" id="gtvSubmitModal">
+  <div class="gtv-modal-card">
+    <button class="gtv-modal-close" type="button" data-close="gtvSubmitModal" aria-label="关闭">✕</button>
+    <h3>投稿 / 挑战赛报名</h3>
+    <p>填写基本信息，我们会在 3 个工作日内与你联系。请确保作品为原创。</p>
+    <form class="gtv-form" id="gtvSubmitForm">
+      <label for="gtvName">称呼</label>
+      <input type="text" id="gtvName" placeholder="你的昵称或姓名" required>
+      <label for="gtvMail">联系方式</label>
+      <input type="email" id="gtvMail" placeholder="邮箱地址" required>
+      <label for="gtvType">投稿类型</label>
+      <select id="gtvType">
+        <option>原创短片</option>
+        <option>纪录长片</option>
+        <option>人物访谈</option>
+        <option>挑战赛报名</option>
+      </select>
+      <label for="gtvDesc">作品简介</label>
+      <textarea id="gtvDesc" placeholder="简单介绍你的作品主题与拍摄背景"></textarea>
+      <button class="gtv-btn gtv-btn-primary" type="submit" style="width:100%;justify-content:center;">提交</button>
+      <p class="gtv-modal-tip">提交即表示同意平台对作品进行原创性核验。</p>
+    </form>
+  </div>
+</div>
+
+<!-- 分享弹窗 -->
+<div class="gtv-modal" id="gtvShareModal">
+  <div class="gtv-modal-card">
+    <button class="gtv-modal-close" type="button" data-close="gtvShareModal" aria-label="关闭">✕</button>
+    <h3>分享给朋友</h3>
+    <p>把 GTV小蓝 官网分享给更多喜欢真实影像的人。</p>
+    <div class="gtv-share-row">
+      <button class="gtv-share-btn" type="button" data-share="微信">微信</button>
+      <button class="gtv-share-btn" type="button" data-share="微博">微博</button>
+      <button class="gtv-share-btn" type="button" data-share="QQ">QQ</button>
+      <button class="gtv-share-btn" type="button" data-share="复制链接">复制链接</button>
+    </div>
+    <p class="gtv-modal-tip">提示：分享内容请遵守社区规范，共同维护良好的内容生态。</p>
+  </div>
+</div>
+
+<!-- 创作者弹窗 -->
+<div class="gtv-modal" id="gtvCreatorModal">
+  <div class="gtv-modal-card">
+    <button class="gtv-modal-close" type="button" data-close="gtvCreatorModal" aria-label="关闭">✕</button>
+    <h3 id="gtvCreatorName">创作者</h3>
+    <p id="gtvCreatorBio">简介</p>
+    <div class="gtv-stats" style="max-width:100%;">
+      <div class="gtv-stat"><b id="gtvCreatorWorks">0</b><em>作品数</em></div>
+      <div class="gtv-stat"><b id="gtvCreatorFans">0</b><em>关注数</em></div>
+      <div class="gtv-stat"><b>原创</b><em>内容认证</em></div>
+    </div>
+    <p class="gtv-modal-tip">该创作者为平台签约或长期合作作者，作品均经原创核验。</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端导航 */
+  var menuBtn = document.getElementById("gtvMenuBtn");
+  var nav = document.getElementById("gtvNav");
+  if(menuBtn && nav){
+    menuBtn.addEventListener("click", function(){
+      var open = nav.classList.toggle("gtv-open");
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      menuBtn.textContent = open ? "✕" : "☰";
+    });
+    nav.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        nav.classList.remove("gtv-open");
+        menuBtn.setAttribute("aria-expanded","false");
+        menuBtn.textContent = "☰";
+      });
+    });
+  }
+
+  /* Toast */
+  var toast = document.getElementById("gtvToast");
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.classList.add("gtv-show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toast.classList.remove("gtv-show");
+    }, 2200);
+  }
+
+  /* 搜索反馈 */
+  var searchInput = document.getElementById("gtvSearchInput");
+  var searchBtn = document.getElementById("gtvSearchBtn");
+  var searchTip = document.getElementById("gtvSearchTip");
+  var keywords = ["城市十二时辰","早餐地图","手作","山野对话","书店十年","音乐现场","剪辑幕后","旧物改造"];
+
+  function doSearch(){
+    if(!searchInput || !searchTip) return;
+    var val = searchInput.value.trim();
+    if(!val){
+      searchTip.innerHTML = "试试搜索：<b>城市十二时辰</b>、<b>手作</b>、<b>山野对话</b>";
+      searchTip.classList.add("gtv-show");
+      return;
+    }
+    var hit = keywords.filter(function(k){ return k.indexOf(val) > -1 || val.indexOf(k) > -1; });
+    if(hit.length){
+      searchTip.innerHTML = "找到与「<b>" + escapeHtml(val) + "</b>」相关的内容：" + hit.slice(0,3).map(function(h){ return "「" + h + "」"; }).join("、");
+    }else{
+      searchTip.innerHTML = "暂未找到「<b>" + escapeHtml(val) + "</b>」，已为你推荐近期热门「城市十二时辰」。";
+    }
+    searchTip.classList.add("gtv-show");
+  }
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+    });
+  }
+  if(searchBtn) searchBtn.addEventListener("click", doSearch);
+  if(searchInput){
+    searchInput.addEventListener("keydown", function(e){
+      if(e.key === "Enter"){ doSearch(); }
+    });
+    searchInput.addEventListener("focus", function(){
+      if(!searchInput.value.trim() && searchTip){
+        searchTip.innerHTML = "试试搜索：<b>城市十二时辰</b>、<b>手作</b>、<b>山野对话</b>";
+        searchTip.classList.add("gtv-show");
+      }
+    });
+  }
+  document.addEventListener("click", function(e){
+    if(searchTip && !e.target.closest(".gtv-search")){
+      searchTip.classList.remove("gtv-show");
+    }
+  });
+
+  /* 点赞 / 收藏 */
+  document.querySelectorAll(".gtv-like").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var span = btn.querySelector("span");
+      var base = parseInt(btn.getAttribute("data-count") || "0", 10);
+      var liked = btn.classList.toggle("gtv-liked");
+      var num = liked ? base + 1 : base;
+      if(span) span.textContent = num;
+      btn.innerHTML = (liked ? "♥ <span>" + num + "</span>" : "♡ <span>" + num + "</span>");
+      showToast(liked ? "已点赞，感谢你的喜欢" : "已取消点赞");
+      if(liked){
+        btn.classList.add("gtv-liked");
+        var newSpan = btn.querySelector("span");
+        btn.addEventListener("click", function handler(){}, {once:true});
+      }
+    });
+  });
+
+  document.querySelectorAll(".gtv-save").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var saved = btn.classList.toggle("gtv-saved");
+      btn.innerHTML = saved ? "★ 已收藏" : "☆ 收藏";
+      showToast(saved ? "已加入收藏，可在个人中心查看" : "已取消收藏");
+    });
+  });
+
+  /* 回到顶部 */
+  var topBtn = document.getElementById("gtvTopBtn");
+  window.addEventListener("scroll", function(){
+    if(!topBtn) return;
+    if(window.scrollY > 520){
+      topBtn.classList.add("gtv-show");
+    }else{
+      topBtn.classList.remove("gtv-show");
+    }
+  }, {passive:true});
+  if(topBtn){
+    topBtn.addEventListener("click", function(){
+      window.scrollTo({top:0, behavior:"smooth"});
+    });
+  }
+
+  /* 弹窗通用 */
+  function openModal(id){
+    var m = document.getElementById(id);
+    if(m) m.classList.add("gtv-show");
+  }
+  function closeModal(id){
+    var m = document.getElementById(id);
+    if(m) m.classList.remove("gtv-show");
+  }
+  document.querySelectorAll("[data-close]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      closeModal(btn.getAttribute("data-close"));
+    });
+  });
+  document.querySelectorAll(".gtv-modal").forEach(function(m){
+    m.addEventListener("click", function(e){
+      if(e.target === m) m.classList.remove("gtv-show");
+    });
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+      document.querySelectorAll(".gtv-modal.gtv-show").forEach(function(m){
+        m.classList.remove("gtv-show");
+      });
+    }
+  });
+
+  /* 投稿入口 */
+  var submitModal = "gtvSubmitModal";
+  ["gtvSubmitBtn","gtvContactSubmit"].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.addEventListener("click", function(){ openModal(submitModal); });
+  });
+  var submitForm = document.getElementById("gtvSubmitForm");
+  if(submitForm){
+    submitForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      closeModal(submitModal);
+      showToast("提交成功，我们会在 3 个工作日内联系你");
+      submitForm.reset();
+    });
+  }
+
+  /* 分享 */
+  var shareBtn = document.getElementById("gtvShareBtn");
+  if(shareBtn) shareBtn.addEventListener("click", function(){ openModal("gtvShareModal"); });
+  document.querySelectorAll(".gtv-share-btn").forEach(function(b){
+    b.addEventListener("click", function(){
+      var type = b.getAttribute("data-share");
+      if(type === "复制链接"){
+        copyLink();
+      }else{
+        showToast("已打开" + type + "分享入口");
+      }
+    });
+  });
+
+  /* 复制链接 */
+  var copyBtn = document.getElementById("gtvCopyBtn");
+  function copyLink(){
+    var url = window.location.href;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){
+        showToast("官网链接已复制");
+      }).catch(function(){
+        fallbackCopy(url);
+      });
+    }else{
+      fallbackCopy(url);
+    }
+  }
+  function fallbackCopy(text){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try{ document.execCommand("copy"); showToast("官网链接已复制"); }
+    catch(err){ showToast("复制失败，请手动复制地址"); }
+    document.body.removeChild(ta);
+  }
+  if(copyBtn) copyBtn.addEventListener("click", copyLink);
+
+  /* 创作者弹窗 */
+  document.querySelectorAll(".gtv-creator-card").forEach(function(card){
+    card.addEventListener("click", function(){
+      var name = card.getAttribute("data-creator");
+      var bio = card.getAttribute("data-bio");
+      var works = card.getAttribute("data-works");
+      var fans = card.getAttribute("data-fans");
+      var n = document.getElementById("gtvCreatorName");
+      var b = document.getElementById("gtvCreatorBio");
+      var w = document.getElementById("gtvCreatorWorks");
+      var f = document.getElementById("gtvCreatorFans");
+      if(n) n.textContent = name;
+      if(b) b.textContent = bio;
+      if(w) w.textContent = works;
+      if(f) f.textContent = fans;
+      openModal("gtvCreatorModal");
+    });
+  });
+
+  /* 导航高亮 */
+  var sections = document.querySelectorAll("main section[id]");
+  var navLinks = document.querySelectorAll(".gtv-nav a");
+  window.addEventListener("scroll", function(){
+    var pos = window.scrollY + 160;
+    var current = "";
+    sections.forEach(function(sec){
+      if(sec.offsetTop <= pos) current = sec.id;
+    });
+    navLinks.forEach(function(a){
+      a.classList.toggle("gtv-active", a.getAttribute("href") === "#" + current);
+    });
+  }, {passive:true});
+
+})();
+</script>
+</body>
+  </html>
